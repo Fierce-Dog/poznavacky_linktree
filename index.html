@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Poznávačky</title>
+    <style>
+        :root { --primary: #4a90e2; --bg: #f0f2f5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); display: flex; justify-content: center; padding: 20px; margin: 0; }
+        .menu-card { background: white; padding: 2rem; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
+        h1 { color: #333; margin-bottom: 30px; font-size: 24px; }
+        .game-link { 
+            display: flex; align-items: center; justify-content: center;
+            background: var(--primary); color: white; 
+            padding: 18px; margin: 15px 0; 
+            text-decoration: none; border-radius: 15px; 
+            font-size: 18px; font-weight: bold; 
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+        }
+        .game-link:active { transform: scale(0.96); background: #357abd; }
+        .footer { margin-top: 30px; color: #888; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="menu-card">
+        <h1>🎮 Moje Poznávačky</h1>
+        
+        <a href="https://fierce-dog.github.io/poznavacka_aminokyseliny/" class="game-link">Chemie - Aminokyseliny</a>
+        <a href="https://fierce-dog.github.io/poznavacka_all/" class="game-link">Chemie - Triviální názvy</a>
+        
+        <div class="footer">Vyber si hru a začni trénovat!</div>
+    </div>
+</body>
+</html>
