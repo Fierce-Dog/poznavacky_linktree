@@ -9,30 +9,126 @@
         body { font-family: 'Segoe UI', sans-serif; background: var(--bg); display: flex; justify-content: center; padding: 20px; margin: 0; }
         .menu-card { background: white; padding: 2rem; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
         h1 { color: #333; margin-bottom: 30px; font-size: 24px; }
-        .game-link { 
-            display: flex; align-items: center; justify-content: center;
-            background: var(--primary); color: white; 
-            padding: 18px; margin: 15px 0; 
-            text-decoration: none; border-radius: 15px; 
-            font-size: 18px; font-weight: bold; 
-            transition: transform 0.2s, background 0.2s;
-            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+        /* Základní vzhled tlačítka s jemným gradientem */
+        .game-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(255, 255, 255);
+            padding: 18px 5px;
+            margin: 15px 0;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.2s;
+            border: none;
+            /* Defaultní barva (pokud zapomeneš přiřadit skupinu) */
+            background: linear-gradient(135deg, #bdc3c7, #2c3e50);
         }
-        .game-link:active { transform: scale(0.96); background: #357abd; }
+
+        /* Skupina MODRÁ - bílé písmo je jasná volba */
+        .skupina-modra {
+            background: linear-gradient(135deg, #4facfe 0%, #73beff 100%) !important;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+            color: #ffffff !important; /* Čistě bílá */
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Jemný stín pod písmem pro lepší čitelnost */
+        }
+
+        /* Skupina ŽLUTÁ/ORANŽOVÁ - tady bílá občas zaniká, tmavě hnědá vypadá luxusněji */
+        .skupina-zluta {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%) !important;
+            box-shadow: 0 4px 15px rgba(246, 211, 101, 0.4);
+            color: #5d4037 !important; /* Velmi tmavě hnědá, která ladí k oranžové */
+        }
+
+        /* Skupina ZELENÁ - bílá na syté zelené krásně září */
+        .skupina-zelena {
+            background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%) !important;
+            box-shadow: 0 4px 15px rgba(102, 187, 106, 0.4);
+            color: #ffffff !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Skupina FIALOVÁ (pokud bys ji chtěl) - bílé písmo */
+        .skupina-fialova {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%) !important;
+            box-shadow: 0 4px 15px rgba(161, 140, 209, 0.4);
+            color: #2d3436 !important; /* Tmavě šedá pro jemnější kontrast */
+        }
+        .game-link:active {
+            transform: scale(0.96);
+        }
         .footer { margin-top: 30px; color: #888; font-size: 14px; }
+
+        /* Kontejner pro mřížku - dvě tlačítka vedle sebe */
+        .group-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Rozdělí prostor na dva stejné sloupce */
+            gap: 15px; /* Mezera mezi tlačítky */
+            margin-bottom: 30px;
+        }
+
+        /* Nadpis skupiny */
+        .group-title {
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #555;
+            margin: 40px 0 0px 5px;
+            border-left: 4px solid;
+            padding-left: 10px;
+        }
+
+        /* Tady jsou ty barvy, které ladí k tvým skupinám */
+        .title-modra { border-left-color: #4facfe; }
+        .title-zluta { border-left-color: #f6d365; }
+        .title-zelena { border-left-color: #66bb6a; }
+        .title-fialova { border-left-color: #a18cd1; }
+
+        /* Úprava tlačítek pro mřížku - zrušíme fixní margin, o ten se stará 'gap' */
+        .game-link {
+            margin: 0 !important; 
+            height: 100%; /* Aby byla všechna tlačítka stejně vysoká */
+            min-height: 40px;
+            font-size: 16px; /* Trochu menší písmo, aby se vešlo vedle sebe */
+        }
+
+        /* Speciální třída pro tlačítko, které má být samo přes celou šířku */
+        .full-width {
+            grid-column: span 2;
+        }
     </style>
 </head>
 <body>
     <div class="menu-card">
         <h1>PETIBE Poznávačky</h1>
-        
-        <a href="https://fierce-dog.github.io/poznavacka_aminokyseliny/" class="game-link">Chemie - Aminokyseliny</a>
-        <a href="https://fierce-dog.github.io/poznavacka_chemie_trivialninazvy/" class="game-link">Chemie - Triviální názvy vše</a>
-        <a href="https://fierce-dog.github.io/poznavacka_chovy_psi/" class="game-link">Chovy - Psi</a>
-        <a href="https://fierce-dog.github.io/poznavacka_chovy_hospody/" class="game-link">Chovy - Hospodářská zvířata</a>
-        <a href="https://fierce-dog.github.io/poznavacka_chovy_exoti/" class="game-link">Chovy - Exotická zvířata</a>
-        
-        <div class="footer">Co si chceš dnes procvičit?</div>
+
+        <div class="group-title title-fialova">Chovy</div>
+        <div class="group-grid">
+            <a href="https://fierce-dog.github.io/poznavacka_chovy_hospody/" class="game-link skupina-fialova">Hospodářská zvířata</a>
+            <a href="https://fierce-dog.github.io/poznavacka_chovy_exoti/" class="game-link skupina-fialova">Exotická zvířata</a>
+            <a href="https://fierce-dog.github.io/poznavacka_chovy_psi/" class="game-link skupina-fialova">Psi</a>
+        </div>
+
+        <div class="group-title title-zelena">Zoologie</div>
+        <div class="group-grid">
+            <a href="https://fierce-dog.github.io/poznavacka_zoo_zvirata" class="game-link skupina-zelena">Placeholder</a>
+            <a href="https://fierce-dog.github.io/poznavacka_zoo_doplnky" class="game-link skupina-zelena">Siluety ptáků, lebky, stopy,...</a>
+            <a href="https://fierce-dog.github.io/poznavacka_zoo_zvuky" class="game-link skupina-zelena">Hlasy ptáků</a>
+        </div>
+
+        <div class="group-title title-zluta">Biochemie</div>
+        <div class="group-grid">
+            <a href="https://fierce-dog.github.io/poznavacka_biochemie/" class="game-link skupina-zluta">Triviální názvy</a>
+        </div>
+
+        <div class="group-title title-modra">Chemie</div>
+        <div class="group-grid">
+            <a href="https://fierce-dog.github.io/poznavacka_aminokyseliny/" class="game-link skupina-modra">Aminokyseliny</a>
+            <a href="https://fierce-dog.github.io/poznavacka_chemie_trivialninazvy/" class="game-link skupina-modra">Triviální názvy</a>
+        </div>
     </div>
 </body>
 </html>
+
