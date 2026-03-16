@@ -93,6 +93,24 @@
 
         .game-link:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .game-link:active { transform: scale(0.96); }
+
+        /* Úprava pro mobily (displeje užší než 480px) */
+    @media (max-width: 480px) {
+        .game-link span {
+            font-size: 11px;       /* Zmenšíme písmo jen na mobilu */
+            letter-spacing: 0;    /* Ubereme rozestup písmen, aby se text lépe vešel */
+            line-height: 1;     /* Ještě víc přitáhneme řádky k sobě */
+            height: 2.2em;        /* Mírně upravíme výšku boxu pro text */
+        }
+
+        .group-grid {
+            gap: 8px;             /* Menší mezery mezi čtverci, aby zbylo víc místa na obsah */
+        }
+
+        .menu-card {
+            padding: 1rem;        /* Menší vnitřní okraj karty, ať mají tlačítka víc místa */
+        }
+    }
     </style>
 </head>
 
